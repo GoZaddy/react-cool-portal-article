@@ -31,7 +31,7 @@ function App() {
             <div
               className={`modal-dialog ${animationState}`}
               role="dialog"
-              aria-labelledby="modal-header"
+              aria-labelledby="modal-label"
               aria-modal="true"
               onAnimationEnd={() => {
                 if(animationState == "slideOut"){
