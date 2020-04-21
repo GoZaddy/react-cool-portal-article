@@ -1,3 +1,8 @@
+
+
+
+
+
 .App {
   text-align: center;
 }
@@ -28,11 +33,75 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+body{
+  --curve: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#react-cool-portal{
+  position: absolute;
+  top:0;
+  left: 0;
+  min-width: 100vw;
+  height: 100%;
+}
+.modal{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+}
+.modal-dialog{
+  background-color: white;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  padding: 1rem;
+  
+}
+.modal-header{
+  font-weight: 400;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-header #modal-label{
+  margin:0;
+}
+.modal-exit{
+  font-size: 1rem;
+  color: red;
+  cursor: pointer;
+}
+.slideIn{
+  animation: slideIn 0.5s var(--curve) 0s 1 normal none;
+}
+
+.slideOut{
+  animation: slideOut 0.5s var(--curve) 0s 1 normal forwards;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateY(-2rem);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  100% {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
